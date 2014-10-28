@@ -1,0 +1,21 @@
+pptpd:
+  "/etc/pptpd.conf":
+    localip: whiteip
+    remoteip: 10.7.0.1-200
+  "/etc/ppp/pptpd-options":
+    - name: pptpd
+    - chapms-strip-domain
+    - refuse-pap
+    - refuse-chap
+    - refuse-mschap
+    - require-mschap-v2
+    - require-mppe-128
+    - ms-dns: mydnsserver 
+    - proxyarp
+    - nodefaultroute
+    - lock
+    - nobsdcomp
+  "/etc/ppp/chap-secrets":
+    - user: "user"
+      passwd: "password"
+      ipaddr: "ip"
